@@ -1,0 +1,1117 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#"
+     xml:base="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology"
+     xmlns:ATO="http://www.semanticweb.org/ontologies/2021/ATO#"
+     xmlns:SNG="http://www.semanticweb.org/dmitriair/ontologies/2019/6/SNG#"
+     xmlns:ato="http://www.owl-ontologies.com/ato.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:ato_ontology="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology">
+        <rdfs:label xml:lang="en">Agro technology ontology for precise agriculture, based on the ontology of production processes ato (MAnufacturing&apos;s Semantics Ontology: Ontology of tools and concepts of industrial manufacturing)</rdfs:label>
+        <rdfs:label xml:lang="ru">Онтология агротехнологий для точного земледелия, основанная на онтологии производственных процессов ato (MAnufacturing&apos;s Semantics Ontology: онтология инструментов и концепций промышленного производства)</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#мощность -->
+
+    <owl:AnnotationProperty rdf:about="http://www.owl-ontologies.com/ato.owl#мощность"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#cardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#cardinality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#allowedProcessFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#allowedProcessFor">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#isMachinableByProcess"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">allowed process for</rdfs:label>
+        <rdfs:label xml:lang="ru">допустимый процесс для</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#contains">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#isLocatedIn"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Material_resource"/>
+        <rdfs:label xml:lang="en">contains</rdfs:label>
+        <rdfs:label xml:lang="ru">включает</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#enablesRealisationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#enablesRealisationOf">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#requiresMachine"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Logistic_operation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">enables realisation of</rdfs:label>
+        <rdfs:label xml:lang="ru">позволяет выполнить</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#execute -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#execute">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#isExecutedBy"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Human_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:label xml:lang="en">execute</rdfs:label>
+        <rdfs:label xml:lang="ru">выполняет</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#hasShape -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#hasShape">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Shape"/>
+        <rdfs:label xml:lang="en">has shape</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет форму</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#includes">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#isIn"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:label xml:lang="en">includes</rdfs:label>
+        <rdfs:label xml:lang="ru">включает</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#induces -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#induces">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#isInducedBy"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Cost_entity"/>
+        <rdfs:label xml:lang="en">induces</rdfs:label>
+        <rdfs:label xml:lang="ru">стоит</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isExecutedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isExecutedBy">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Human_resource"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is executed by</rdfs:label>
+        <rdfs:label xml:lang="ru">выполняется</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isIn">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:label xml:lang="en">is in</rdfs:label>
+        <rdfs:label xml:lang="ru">находится в</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isInducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isInducedBy">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Cost_entity"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:label xml:lang="en">is induced by</rdfs:label>
+        <rdfs:label xml:lang="ru">возникает в ходе</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isLocatedIn">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Material_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:label xml:lang="en">is located in</rdfs:label>
+        <rdfs:label xml:lang="ru">расположено в</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isMachinableByProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isMachinableByProcess">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">is machinable by process</rdfs:label>
+        <rdfs:label xml:lang="ru">выполняется в процессе</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isMachinableWithTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isMachinableWithTool">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#toolUsableOn"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:label xml:lang="en">is machinable with tool</rdfs:label>
+        <rdfs:label xml:lang="ru">обрабатывается с помощью</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#isUsedBy">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#usesTool"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:comment xml:lang="fr">Machines qui utilisent cet outil</rdfs:comment>
+        <rdfs:comment xml:lang="en">Machinetools which use a given tool</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is used by</rdfs:label>
+        <rdfs:label xml:lang="ru">устанавливается на</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#ofTopology -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#ofTopology">
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Topology"/>
+        <rdfs:label xml:lang="en">of topology</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет топологию</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#previousOperation -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#previousOperation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">previous operation</rdfs:label>
+        <rdfs:label xml:lang="ru">предшедствующая операция</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#requiredToolFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#requiredToolFor">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ato.owl#requiresTool"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">required tool for</rdfs:label>
+        <rdfs:label xml:lang="ru">является необходимым агрегатом для</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#requiresMachine -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#requiresMachine">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Logistic_operation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:label xml:lang="en">requires machine</rdfs:label>
+        <rdfs:label xml:lang="ru">требует используования машины</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#requiresTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#requiresTool">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:label xml:lang="en">requires tool</rdfs:label>
+        <rdfs:label xml:lang="ru">требует использования</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#toolUsableOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#toolUsableOn">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+        <rdfs:label xml:lang="en">usable on</rdfs:label>
+        <rdfs:label xml:lang="ru">используется для</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#usesTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ato.owl#usesTool">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:label xml:lang="en">uses tool</rdfs:label>
+        <rdfs:label xml:lang="ru">использует агрегат</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#has_a_way_to_change -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#has_a_way_to_change">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Artificial_modification_of_soil"/>
+        <rdfs:label xml:lang="en">has a way to change</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет способ изменения</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#has_properties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#has_properties">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties"/>
+        <rdfs:label xml:lang="en">has properties</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет свойства</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#произведен_ремнот -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#произведен_ремнот">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Repairs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#complexity_rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ato.owl#complexity_rating">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Technological_entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">complexity rating</rdfs:label>
+        <rdfs:label xml:lang="ru">сложность выполнения</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ato.owl#duration">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:label xml:lang="en">duration</rdfs:label>
+        <rdfs:label xml:lang="ru">продолжительность</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ato.owl#identifier">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">identifier</rdfs:label>
+        <rdfs:label xml:lang="ru">идентификатор</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ato.owl#name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <rdfs:label xml:lang="ru">название</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Agronomist -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Agronomist">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Human_resource"/>
+        <rdfs:label xml:lang="en">Agronomist</rdfs:label>
+        <rdfs:label xml:lang="ru">Агроном</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept">
+        <rdfs:label xml:lang="en">Agrotechnological concept</rdfs:label>
+        <rdfs:label xml:lang="ru">Агротехнологический концепт</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Building -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Building">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:label xml:lang="en">Building</rdfs:label>
+        <rdfs:label xml:lang="ru">Здание</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Cost_entity -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Cost_entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Entity"/>
+        <rdfs:label xml:lang="en">Cost entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Стоимостная сущность</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Entity -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept"/>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Сущность</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Fertilizer -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Fertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+        <rdfs:comment xml:lang="ru">Вещества, применяемые для улучшения питания растений, свойств почвы, повышения урожаев.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fertilizer</rdfs:label>
+        <rdfs:label xml:lang="ru">Удобрение</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Field_cultivator -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Field_cultivator">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:label xml:lang="en">Field cultivator</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрегат для обработки поля</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Geographic_resource -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Geographic_resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:label xml:lang="en">Geographic resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Географический ресурс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Geometric_entity -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Geometric_entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Technological_entity"/>
+        <rdfs:label xml:lang="en">Geometric entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Геометрическая сущность</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Technological_entity"/>
+        <rdfs:label xml:lang="en">Geometric entity for production</rdfs:label>
+        <rdfs:label xml:lang="ru">Геометрическая сущность для производства</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Handling -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Handling">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Logistic_operation"/>
+        <rdfs:label xml:lang="en">Handling</rdfs:label>
+        <rdfs:label xml:lang="ru">Управление</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Harvesting_machine -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Harvesting_machine">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Unit"/>
+        <rdfs:label xml:lang="en">Harvesting machine</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрегат для уборки урожая</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Human_resource -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Human_resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:label xml:lang="en">Human resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Человеческий ресурс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Linear_entity -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Linear_entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production"/>
+        <rdfs:label xml:lang="en">Linear entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Линейная сущность</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Logistic_operation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Logistic_operation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:label xml:lang="en">Logistic operation</rdfs:label>
+        <rdfs:label xml:lang="ru">Логистическая операция</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Machine_preparing -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Machine_preparing">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Preparation_operation"/>
+        <rdfs:label xml:lang="en">Machine preparing</rdfs:label>
+        <rdfs:label xml:lang="ru">Подготовка оборудования</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Machine_resource -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Machine_resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Material_resource"/>
+        <rdfs:label xml:lang="en">Machine resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Машины сельскохозяйственные</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Maintenance -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Maintenance">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Logistic_operation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maintenance</rdfs:label>
+        <rdfs:label xml:lang="ru">Обслуживание</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Manager -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Human_resource"/>
+        <rdfs:comment xml:lang="ru">Физическое лицо, наделённое правом расчёта (разработки) и принятия решения по управлению технологическим процессом с целью получения конечного продукта, для производства которого предназначен технологический процесс.</rdfs:comment>
+        <rdfs:label xml:lang="en">Manager</rdfs:label>
+        <rdfs:label xml:lang="ru">Руководитель процесса</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Material_resource -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Material_resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:label xml:lang="en">Material resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Материальный ресурс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Operation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Operation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept"/>
+        <rdfs:label xml:lang="en">Operation</rdfs:label>
+        <rdfs:label xml:lang="ru">Операция</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Operator -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Operator">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Human_resource"/>
+        <rdfs:comment xml:lang="ru">Исполнитель управленческих решений специалиста: агронома, бригадира иного лица принимающего решения по управлению процессом.</rdfs:comment>
+        <rdfs:label xml:lang="en">Operator</rdfs:label>
+        <rdfs:label xml:lang="ru">Оператор</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Preparation_operation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Preparation_operation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:label xml:lang="en">Preparation operation</rdfs:label>
+        <rdfs:label xml:lang="ru">Подготовительная операция</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Presowing_soil_preparation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Presowing_soil_preparation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">Presowing soil preparation</rdfs:label>
+        <rdfs:label xml:lang="ru">Предпосевная подготовка почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Production_operation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Production_operation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Operation"/>
+        <rdfs:label xml:lang="en">Production operation</rdfs:label>
+        <rdfs:label xml:lang="ru">Производственная операция</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Raw_material -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Raw_material">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Technological_entity"/>
+        <rdfs:label xml:lang="en">Raw material</rdfs:label>
+        <rdfs:label xml:lang="ru">Сырье</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Resource -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept"/>
+        <rdfs:label xml:lang="en">Resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Ресурс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Seed_preparation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Seed_preparation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seed preparation for sowing</rdfs:label>
+        <rdfs:label xml:lang="ru">Подготовка семян к посеву</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Seeds -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Seeds">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+        <rdfs:label xml:lang="en">Seeds</rdfs:label>
+        <rdfs:label xml:lang="ru">Семена</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Shape -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Shape">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geometric_entity"/>
+        <rdfs:label xml:lang="en">Shape</rdfs:label>
+        <rdfs:label xml:lang="ru">Форма</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Site -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Site">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Site</rdfs:label>
+        <rdfs:label xml:lang="ru">Участок</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Technological_entity -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Technological_entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Entity"/>
+        <rdfs:label xml:lang="en">Technological entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Технологическая сущность</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Topology -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Topology">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geometric_entity"/>
+        <rdfs:label xml:lang="en">Topology</rdfs:label>
+        <rdfs:label xml:lang="ru">Топология</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Tractor -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Tractor">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:label xml:lang="en">Tractor</rdfs:label>
+        <rdfs:label xml:lang="ru">Трактор</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Unit -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Unit">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Material_resource"/>
+        <rdfs:label xml:lang="en">Unit</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрегат</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ato.owl#Vehicle -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ato.owl#Vehicle">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ato.owl#enablesRealisationOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/ato.owl#Logistic_operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Vehicle</rdfs:label>
+        <rdfs:label xml:lang="ru">Транспортное средство</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrochemical_properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrochemical_properties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties"/>
+        <rdfs:comment xml:lang="ru">Основным признаком, отличающим горную породу от почвы, является наличие в последней органического вещества - гумуса - это индивидуальные органические соединения, продукты их взаимодействия, а также органические соединения, находящиеся в форме органоминеральных образований.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agrochemical properties of soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрохимические свойства почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrophysical_properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrophysical_properties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties"/>
+        <rdfs:comment xml:lang="ru">Определяют и характеризуют состояние почвы: соотношение частиц по крупности, взаимное расположение (плотность и рыхлость сложения, способность образовывать структуру и т.д.), обуславливают все водно-воздушные свойства и, следовательно, плодородие почвы и возможности её обработки.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agrophysical properties of soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрофизические свойства почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrophysical_properties_of_soil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrophysical_properties_of_soil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Mesurment"/>
+        <rdfs:comment xml:lang="ru">Определяют и характеризуют её состояние: соотношение частиц по крупности, взаимное расположение (плотность и рыхлость сложения, способность образовывать структуру и т.д.), обуславливают все водно-воздушные свойства и, следовательно, плодородие почвы и возможности её обработки.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agrophysical properties of soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Агрофизические свойства почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Artificial_modification_of_soil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Artificial_modification_of_soil">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">Artificial modification of soil properties</rdfs:label>
+        <rdfs:label xml:lang="ru">Искусственное изменение свойств почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrochemical_properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrochemical_properties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Artificial_modification_of_soil"/>
+        <rdfs:label xml:lang="en">Changes of the agrochemical properties of the soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Изменение агрохимических свойств почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrophysical_properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrophysical_properties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Artificial_modification_of_soil"/>
+        <rdfs:label xml:lang="en">Changes of the agrophysical properties of the soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Изменение агрофизических свойств почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Combine_harvester -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Combine_harvester">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Machine_resource"/>
+        <rdfs:label xml:lang="en">Combine harvester</rdfs:label>
+        <rdfs:label xml:lang="ru">Комбайн</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Coordinates -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Coordinates">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geometric_entity_for_production"/>
+        <rdfs:label xml:lang="en">Coordinates</rdfs:label>
+        <rdfs:label xml:lang="ru">Координаты</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Field -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Field">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Geographic_resource"/>
+        <rdfs:comment xml:lang="ru">Один из видов сельскохозяйственных угодий, участок земли территория которого используется для сельскохозяйственных целей. По полю движется машина для внесения удобрений и равномерно распределяет по его поверхности удобрения в соответствии с дозой, указанной в задании.</rdfs:comment>
+        <rdfs:label xml:lang="en">Field</rdfs:label>
+        <rdfs:label xml:lang="ru">Поле</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Harvest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Harvest">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">Harvest</rdfs:label>
+        <rdfs:label xml:lang="ru">Уборка урожая</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Information_resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Information_resource">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Resource"/>
+        <rdfs:label xml:lang="en">Information resource</rdfs:label>
+        <rdfs:label xml:lang="ru">Информационный ресурс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Mesurment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Mesurment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Information_resource"/>
+        <rdfs:label xml:lang="en">Mesurment</rdfs:label>
+        <rdfs:label xml:lang="ru">Измерение</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Natural_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Natural_entity">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Entity"/>
+        <rdfs:label xml:lang="en">Natural entity</rdfs:label>
+        <rdfs:label xml:lang="ru">Природная тело</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Plant_care -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Plant_care">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">Plant care</rdfs:label>
+        <rdfs:label xml:lang="ru">Уход за растениями</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Presowing_fertilization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Presowing_fertilization">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Presowing_soil_preparation"/>
+        <rdfs:comment xml:lang="ru">Изменение агрохимического состояния почвы (рабочего тела) в соответствии с агротехническими требованиями к почве по показателям G, P, K, Ph и др. для посева конкретной сельскохозяйственной культуры.</rdfs:comment>
+        <rdfs:label xml:lang="en">Presowing fertilization</rdfs:label>
+        <rdfs:label xml:lang="ru">Предпосевное внесение удобрений</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Repairs -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Repairs">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Maintenance"/>
+        <rdfs:label xml:lang="en">Repairs</rdfs:label>
+        <rdfs:label xml:lang="ru">Ремонт</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Natural_entity"/>
+        <rdfs:comment xml:lang="ru">Природное тело, формирующееся в результате преобразования поверхностных слоёв суши Земли при совместном воздействии факторов почвообразования.</rdfs:comment>
+        <rdfs:label xml:lang="en">Soil</rdfs:label>
+        <rdfs:label xml:lang="ru">Почва</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Soil_properties">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Agrotechnological_concept"/>
+        <rdfs:label xml:lang="en">Soil properties</rdfs:label>
+        <rdfs:label xml:lang="ru">Свойства почвы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Sowing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Sowing">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Production_operation"/>
+        <rdfs:label xml:lang="en">Sowing</rdfs:label>
+        <rdfs:label xml:lang="ru">Посев</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Warehouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Warehouse">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Building"/>
+        <rdfs:label xml:lang="en">Warehouse</rdfs:label>
+        <rdfs:label xml:lang="ru">Склад</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Water">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ato.owl#Raw_material"/>
+        <rdfs:label xml:lang="en">Water</rdfs:label>
+        <rdfs:label xml:lang="ru">Вода</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#content_of_humus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#content_of_humus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrochemical_properties"/>
+        <rdfs:label xml:lang="en">Content of humus</rdfs:label>
+        <rdfs:label xml:lang="ru">Содержание питательных веществ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#nitrogen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#nitrogen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrochemical_properties"/>
+        <rdfs:label xml:lang="en">Content of nitrogen</rdfs:label>
+        <rdfs:label xml:lang="ru">Содержание азота</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#nutrients -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#nutrients">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Agrochemical_properties"/>
+        <rdfs:label xml:lang="en">Content of nutrients</rdfs:label>
+        <rdfs:label xml:lang="ru">Содержание питательных веществ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#ameliorative_measures -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#ameliorative_measures">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrophysical_properties"/>
+        <rdfs:label xml:lang="en">ameliorative measures</rdfs:label>
+        <rdfs:label xml:lang="ru">мелиоративные мероприятия</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#distribution_over_plants -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#distribution_over_plants">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrochemical_properties"/>
+        <rdfs:label xml:lang="en">distribution over plants</rdfs:label>
+        <rdfs:label xml:lang="ru">распределение по растениям</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#machine_spreading -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#machine_spreading">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrochemical_properties"/>
+        <rdfs:label xml:lang="en">machine spreading over the soil surface with incorporation into the soil</rdfs:label>
+        <rdfs:label xml:lang="ru">машинное распределение по поверхности почвы с заделкой в почву</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#manual_spreading -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#manual_spreading">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrochemical_properties"/>
+        <rdfs:label xml:lang="en">manual spreading over the soil surface and incorporation</rdfs:label>
+        <rdfs:label xml:lang="ru">ручное распределение по поверхности почвы и заделка</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#mechanical_processing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#mechanical_processing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/AgroTech_Ontology#Changes_of_the_agrophysical_properties"/>
+        <rdfs:label xml:lang="en">mechanical processing</rdfs:label>
+        <rdfs:label xml:lang="ru">механическая обработка</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:cardinality>1</owl:cardinality>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
